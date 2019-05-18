@@ -1,0 +1,26 @@
+{
+  "name": "FriendFinder",
+  "version": "1.0.0",
+  "description": "Submit a questionnaire to see your most compatible friend.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kstokes16/FriendFinder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kstokes16/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/kstokes16/FriendFinder#readme",
+  "dependencies": {
+    "express": "^4.17.0",
+    "nodemon": "^1.19.0",
+    "path": "^0.12.7"
+  }
+}
