@@ -8,17 +8,17 @@ module.exports = function(app) {
     app.post("/api/friends", function(req,res){
         var newFriend = req.body;
         var newFriendScore = newFriend.scores;
-        console.log("New friend: "+JSON.stringify(newFriend));
+        console.log("New friend: "+ JSON.stringify(newFriend));
   
     var scoresArray = [];
     var friendCount = 0;
     var bestMatch = 0;
 
-    for(var i=0;i<friendsData.length;i++){
+    for (var i=0; i<friendsData.length; i++) {
         console.log("Hello");
         var diff = 0;
 
-        for(var j=0;j<newFriendScore.length;j++)
+        for (var j=0; j<newFriendScore.length; j++)
         {
             console.log("J: "+j);
             diff = diff+(Math.abs(parseInt(friendsData[i].scores[j])-parseInt(newFriend.scores[j])));
