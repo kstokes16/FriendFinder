@@ -13,6 +13,7 @@ app.get("/survey", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/survey.html"));
 });
 
+// GET route that displays homepage
 app.get("/home", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/home.html"));
 });
