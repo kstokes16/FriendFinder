@@ -24,7 +24,7 @@
                 <hr>
                 <p class="lead">Complete the survey below to be matched with your most compatible friend.</p>
 
-                <a href="/home"><button type="button" class="btn btn-info" id="homepage-button">Take me to homepage!</button></a>
+                <a href="/home"><button type="button" class="btn" id="homepage-button"><h6>Take me to homepage!</h6></button></a>
 
        </div>
 
@@ -39,7 +39,7 @@
                      </div>
 
                      <div class="form-group">
-                     <label for="photoLink"><h5>Link to photo image (Required)</h5></label>
+                     <label for="photoLink"><h5>Link to photo image (jpeg, png or gif)</h5></label>
                      <input type="text" class="form-control" id="userPhoto" aria-describedby="userPhotoHelp" placeholder="Enter your photo here">
                      </div>
 
@@ -90,11 +90,11 @@
        </h6>
          <div class="form-group">
                 <select class="survey-questions" id="question4">
-                  <option value="1">1 (Strongly agree)</option>
+                  <option value="1">1 (Strongly disagree)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>
-                  <option value="5">5 (Strongly disagree)</option>
+                  <option value="5">5 (Strongly agree)</option>
                 </select>
          </div>
 
@@ -174,7 +174,7 @@
                 </select>
          </div>
 
-         <button type="button" class="btn btn-info" id="form-submit-button">Submit my answers!</button>
+         <button type="button" class="btn" id="form-submit-button"><h6>Submit my answers!</h6></button>
 
          <div id="friend-modal" class="modal" tabindex="-1" role="dialog">
           <div class="modal-dialog" role="document">
@@ -240,6 +240,7 @@ $("#form-submit-button").on("click", function () {
   $.post("/api/friends",friendSubmissionData, function( data ) {
 
     console.log("Data: "+JSON.stringify(data));
+    $("#questionOne").empty();
     $(".modal-body").html('<h6>Name: </h6>' + data.name);
     $("#match-img").attr("src", data.photo);
     $("#friend-modal").modal("toggle");
@@ -261,15 +262,18 @@ $("#form-submit-button").on("click", function () {
           color: white;
           font-family: 'Ubuntu', sans-serif;
   }
-  #homepage-button:hover, #form-submit-button:hover {
-                background-color: white;
-                color: #3C5A99;
+  #homepage-button:hover {
                 font-family: 'Ubuntu', sans-serif;
+                transform: scale(1.15);
         }
 
   h5 {
     color: #3C5A99;
     font-family: 'Ubuntu', sans-serif;
+  }
+
+  #form-submit-button:hover {
+    transform: scale(1.10);
   }
 
   body {
